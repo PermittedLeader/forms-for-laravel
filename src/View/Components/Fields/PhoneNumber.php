@@ -6,7 +6,7 @@ use Propaganistas\LaravelPhone\PhoneNumber as LaravelPhonePhoneNumber;
 
 class PhoneNumber extends Field
 {
-    public string $component = 'forms.fields.phone-number';
+    public string $component = 'fields.phone-number';
 
     public function __construct($key, $label = '', $value = '')
     {
