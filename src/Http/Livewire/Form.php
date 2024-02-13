@@ -2,10 +2,10 @@
 
 namespace Permittedleader\Laraforms\Http\Livewire;
 
-use Permittedleader\Laraforms\Http\View\Components\Actions\Action;
-use Permittedleader\Laraforms\Http\View\Components\Fields\Field;
 use Closure;
 use Livewire\Component;
+use Permittedleader\Laraforms\View\Components\Fields\Field;
+use Permittedleader\Laraforms\View\Components\Actions\Action;
 
 abstract class Form extends Component
 {
