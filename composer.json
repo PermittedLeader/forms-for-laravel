@@ -3,7 +3,6 @@
     "description": "Forms for Laravel",
     "type": "project",
     "require": {
-        "livewire/livewire": "^3.4",
         "laravel/laravel": "^10.0"
     },
     "require-dev": {
@@ -31,6 +30,10 @@
             "providers": [
                 "Permittedleader\\Laraforms\\PackageServiceProvider"
             ]
+        },
+        "branch-alias": {
+            "main": "1.0",
+            "dev": "1.0-dev"
         }
     }
 }
