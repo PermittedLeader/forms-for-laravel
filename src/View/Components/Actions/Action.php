@@ -1,6 +1,6 @@
 <?php
 
-namespace Permittedleader\Laraforms\Http\View\Components\Actions;
+namespace Permittedleader\Laraforms\View\Components\Actions;
 
 use Closure;
 use Illuminate\Console\View\Components\Component;

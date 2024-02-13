@@ -1,6 +1,5 @@
 <?php
-
-namespace Permittedleader\Laraforms\Http\View\Components;
+namespace Permittedleader\Laraforms\View\Components;
 
 use Illuminate\View\Component;
 

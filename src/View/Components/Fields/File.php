@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components\Forms\Fields;
+namespace Permittedleader\Laraforms\View\Components\Fields;
 
 class File extends Field
 {

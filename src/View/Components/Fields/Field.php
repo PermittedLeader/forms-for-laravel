@@ -1,6 +1,6 @@
 <?php
 
-namespace Permittedleader\Laraforms\Http\View\Components\Fields;
+namespace Permittedleader\Laraforms\View\Components\Fields;
 
 use Closure;
 use Illuminate\Console\View\Components\Component;
