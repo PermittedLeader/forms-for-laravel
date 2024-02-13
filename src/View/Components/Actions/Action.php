@@ -55,7 +55,7 @@ class Action extends Component
      */
     public function component($component)
     {
-        $this->component = 'form.actions.'.$component;
+        $this->component = 'actions.'.$component;
 
         return $this;
     }
@@ -72,7 +72,7 @@ class Action extends Component
      */
     public function render()
     {
-        return view('components.'.$this->component, ['actionObject' => $this]);
+        return view('laraforms::components.'.$this->component, ['actionObject' => $this]);
     }
 
     /**
