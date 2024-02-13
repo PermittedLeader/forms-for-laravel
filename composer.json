@@ -3,6 +3,7 @@
     "description": "Forms for Laravel",
     "type": "project",
     "require": {
+        "livewire/livewire": "^2.11",
         "laravel/laravel": "^10.0"
     },
     "require-dev": {
