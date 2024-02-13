@@ -68,6 +68,6 @@ class Alert extends Component
      */
     public function render()
     {
-        return view('laraforms::components.alert');
+        return view('components.alert');
     }
 }
