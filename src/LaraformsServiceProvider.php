@@ -16,7 +16,7 @@ class LaraformsServiceProvider extends ServiceProvider
         ]);
         $this->loadViewsFrom(__DIR__.'/../resources/views/','laraforms');
         Blade::componentNamespace('PermittedLeader\Laraforms\Views\Components','laraforms');
-        Livewire::component('form',Form::class);
+        Livewire::component('laraform::form',Form::class);
     }
 
     public function register()

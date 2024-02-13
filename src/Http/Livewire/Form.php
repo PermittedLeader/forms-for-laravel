@@ -157,6 +157,6 @@ abstract class Form extends Component
      */
     public function render()
     {
-        return view('livewire.'.$this->component);
+        return view('laraforms::livewire.'.$this->component);
     }
 }
