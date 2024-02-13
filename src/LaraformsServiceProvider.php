@@ -1,10 +1,8 @@
 <?php
 namespace Permittedleader\Laraforms;
 
-use Livewire\Livewire;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
-use Permittedleader\Laraforms\Http\Livewire\Form;
 
 class LaraformsServiceProvider extends ServiceProvider
 {
@@ -16,7 +14,6 @@ class LaraformsServiceProvider extends ServiceProvider
         ]);
         $this->loadViewsFrom(__DIR__.'/../resources/views/','laraforms');
         Blade::componentNamespace('Laraforms\\Views\\Components','laraforms');
-        Livewire::component('laraforms::form',Form::class);
     }
 
     public function register()
