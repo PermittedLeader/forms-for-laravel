@@ -150,7 +150,7 @@ class Action extends Component
     /**
      * Set methods this field is visible on. Valid options are "edit","create","show"
      *
-     * @return void
+     * @return static
      */
     public function visibileOn(array $methods)
     {
