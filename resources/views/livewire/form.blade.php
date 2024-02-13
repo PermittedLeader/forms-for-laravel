@@ -17,7 +17,7 @@
             @endif
         </x-slot>
         @if($errors->any())
-            <x-laraforms::alert level="warning">
+            <x-laraforms::alert.alert level="warning">
                 <x-slot name="header">
                     {{ __('You have errors in your form') }}
                 </x-slot>
@@ -26,7 +26,7 @@
                     <li>{{ $error }}</li>
                 @endforeach
                 </ul>
-            </x-laraforms::alert>
+            </x-laraforms::alert.alert>
         @endif
         @if($this->method == "edit")
             @foreach ($this->fieldsForEdit() as $field)
