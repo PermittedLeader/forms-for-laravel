@@ -6,7 +6,7 @@
             @method($this->getFormMethod())
         @endif
     @endif
-    <x-card>
+    <x-laraform::card>
         <x-slot name="header">
             @if($method == "edit")
                 @lang('Edit') {{ $this->getLabel() }}
@@ -17,7 +17,7 @@
             @endif
         </x-slot>
         @if($errors->any())
-            <x-alert level="warning">
+            <x-laraform::alert level="warning">
                 <x-slot name="header">
                     {{ __('You have errors in your form') }}
                 </x-slot>
@@ -51,8 +51,8 @@
                     {{ $action->render() }}
                 @endforeach
                 @if ($this->method != "show")
-                <x-form-button type="reset">Reset</x-form-button>
-                <x-form-button type="submit" color="bg-brand-500">Submit</x-form-button>
+                <x-laraform::form-button type="reset">Reset</x-form-button>
+                <x-laraform::form-button type="submit" color="bg-brand-500">Submit</x-form-button>
                 @endif
             </x-slot>
         @endif
