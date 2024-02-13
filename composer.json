@@ -29,7 +29,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Permittedleader\\Laraforms\\PackageServiceProvider"
+                "Permittedleader\\Laraforms\\LaraformsServiceProvider"
             ]
         },
         "branch-alias": {
