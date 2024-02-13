@@ -3,14 +3,14 @@
         $fieldname = $fieldObject->key;
         $countryFieldName = $fieldname."_country";
     @endphp
-    <x-input.phonenumber
+    <x-laraforms::input.phonenumber
         label="{{ $fieldObject->getLabel() }}" 
         name="{{ $fieldObject->key }}" 
         required="{{ $fieldObject->required }}"
         number="{{ old($fieldObject->key,$fieldObject->inputValue()?->formatNational()) }}"
         country="{{ old($countryFieldName,$fieldObject->inputValue()?->getCountry()) }}" />
 @else
-<x-show.text 
+<x-laraforms::show.text 
     label="{{ $fieldObject->getLabel() }}" 
     name="{{ $fieldObject->key }}" 
     value="{{  $fieldObject->showValue() }}"

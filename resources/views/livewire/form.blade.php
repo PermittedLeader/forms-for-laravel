@@ -26,7 +26,7 @@
                     <li>{{ $error }}</li>
                 @endforeach
                 </ul>
-            </x-alert>
+            </x-laraforms::alert>
         @endif
         @if($this->method == "edit")
             @foreach ($this->fieldsForEdit() as $field)
@@ -51,12 +51,12 @@
                     {{ $action->render() }}
                 @endforeach
                 @if ($this->method != "show")
-                <x-laraforms::form-button type="reset">Reset</x-form-button>
-                <x-laraforms::form-button type="submit" color="bg-brand-500">Submit</x-form-button>
+                <x-laraforms::form-button type="reset">Reset</x-laraforms::form-button>
+                <x-laraforms::form-button type="submit" color="bg-brand-500">Submit</x-laraforms::form-button>
                 @endif
             </x-slot>
         @endif
-    </x-card>
+    </x-laraforms::card>
     @if ($this->method != "show")
     </form>
     @endif

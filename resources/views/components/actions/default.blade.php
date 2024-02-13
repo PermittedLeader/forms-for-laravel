@@ -1,8 +1,8 @@
 <div>
-    <x-button href="{{ $actionObject->getRoute($this->method) }}">
+    <x-laraforms::button href="{{ $actionObject->getRoute($this->method) }}">
         @if(!empty($actionObject->icon))
-            <x-icon icon="{{ $actionObject->icon }}" label="{{ $actionObject->getLabel() }}" />
+            <x-laraforms::icon icon="{{ $actionObject->icon }}" label="{{ $actionObject->getLabel() }}" />
         @endif
         {{ $actionObject->getLabel() }}
-    </x-button>
+    </x-laraforms::button>
 </div>

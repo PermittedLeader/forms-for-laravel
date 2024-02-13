@@ -1,5 +1,5 @@
 @if($method != "show")
-    <x-input.select label="{{ $fieldObject->getLabel() }}" name="{{ $fieldObject->key }}" required="{{ $fieldObject->required }}">
+    <x-laraforms::input.select label="{{ $fieldObject->getLabel() }}" name="{{ $fieldObject->key }}" required="{{ $fieldObject->required }}">
         @foreach ($fieldObject->options as $option)
             <option 
                 value="{{ $option->{$fieldObject->keyAttribute} }}" 
@@ -13,9 +13,9 @@
                 {{ $option->{$fieldObject->displayAttribute} }}
             </option>
         @endforeach 
-    </x-input.select>
+    </x-laraforms::input.select>
 @else
-    <x-show.text 
+    <x-laraforms::show.text 
         label="{{ $fieldObject->getLabel() }}" 
         name="{{ $fieldObject->key }}" 
         value="{{  $fieldObject->showValue() }}"

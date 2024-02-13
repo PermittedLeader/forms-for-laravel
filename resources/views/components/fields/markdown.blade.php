@@ -1,13 +1,13 @@
 @if($method != "show")
-    <x-input.markdown 
+    <x-laraforms::input.markdown 
         label="{{ $fieldObject->getLabel() }}" 
         name="{{ $fieldObject->key }}" 
         required="{{ $fieldObject->required }}"
         >
         {{ old($fieldObject->key,$fieldObject->inputValue()) }}
-    </x-input.markdown>
+    </x-laraforms::input.markdown>
 @else
-    <x-show.markdown
+    <x-laraforms::show.markdown
         label="{{ $fieldObject->getLabel() }}" 
         name="{{ $fieldObject->key }}" 
         value="{{  $fieldObject->showValue() }}"

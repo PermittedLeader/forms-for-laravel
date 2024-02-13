@@ -23,10 +23,10 @@
     </div>
 
     @if($hint)
-        <x-hint class="">{{ $hint }}</x-hint>
+        <x-laraforms::hint class="">{{ $hint }}</x-laraforms::hint>
     @endif
     @error($name)
-        <x-hint class="text-warning-700">{{ $message }}</x-hint>
+        <x-laraforms::hint class="text-warning-700">{{ $message }}</x-laraforms::hint>
     @enderror
     {{ $slot }}
 </fieldset>

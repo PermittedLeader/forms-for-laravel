@@ -29,14 +29,14 @@
     <label class="{{ $textClasses }}" for="{{ $id }}">
         {{ $label }}
         @if ($required)
-            <x-required />
+            <x-laraforms::required />
         @endif
     </label>
     @if($hint)
-        <x-hint>{{ $hint }}</x-hint>
+        <x-laraforms::hint>{{ $hint }}</x-laraforms::hint>
     @endif
     @error($name)
-        <x-hint class="text-pink">{{ $message }}</x-hint>
+        <x-laraforms::hint class="text-pink">{{ $message }}</x-laraforms::hint>
     @enderror
     <textarea {{ $attributes->merge(['class'=>$fieldClasses]) }} name="{{ $name }}" id="{{ $id }}" @required($required)>{{ $slot }}</textarea>
 </div>

@@ -235,7 +235,7 @@
         ["alpha-2"=>"ZW","dialling-code"=>"263","flag"=>"&#x1F1FF&#x1F1FC","name"=>"Zimbabwe"]
     ];
 @endphp
-<x-input.select label="{{ $label }}" {{ $attributes }}>
+<x-laraforms::input.select label="{{ $label }}" {{ $attributes }}>
     @php
         foreach ($countries as $country){
             echo "<option value=\"".$country['alpha-2']."\"";
@@ -245,4 +245,4 @@
             echo ">".$country['flag']." ".$country['name']." (+".$country['dialling-code'].")</option>";
         }
     @endphp
-</x-input.select>
+</x-laraforms::input.select>

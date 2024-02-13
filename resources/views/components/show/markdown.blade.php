@@ -23,11 +23,11 @@
         {{ $label }}
     </label>
     @if($hint)
-        <x-hint>{{ $hint }}</x-hint>
+        <x-laraforms::hint>{{ $hint }}</x-laraforms::hint>
     @endif
     
     <div {{ $attributes->merge(['class'=>$fieldClasses]) }}" id="{{ $id }}">
-        <x-hint>Formatted text:</x-hint> 
+        <x-laraforms::hint>Formatted text:</x-laraforms::hint> 
         {!! \Illuminate\Support\Str::markdown($value) !!} 
     </div>
 </div>

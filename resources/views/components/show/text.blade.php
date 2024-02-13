@@ -23,7 +23,7 @@
         {{ $label }}
     </label>
     @if($hint)
-        <x-hint>{{ $hint }}</x-hint>
+        <x-laraforms::hint>{{ $hint }}</x-laraforms::hint>
     @endif
     <div {{ $attributes->merge(['class'=>$fieldClasses]) }}" id="{{ $id }}">{{ $value }}</div>
 </div>

@@ -20,6 +20,6 @@
     });
 </script>
 @endpush
-<x-input.textarea label="{{ $label }}" {{ $attributes }} name="{{ $name }}" id="{{ $id }}" required="{{ $fieldObject->required }}">
+<x-laraforms::input.textarea label="{{ $label }}" {{ $attributes }} name="{{ $name }}" id="{{ $id }}" required="{{ $fieldObject->required }}">
     {{ $slot }}
-</x-input.textarea>
+</x-laraforms::input.textarea>
