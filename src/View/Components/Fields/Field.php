@@ -9,7 +9,7 @@ use Illuminate\Support\Str;
 abstract class Field extends Component
 {
 
-    public string $component = 'forms.fields.default';
+    public string $component = 'fields.default';
 
     public $key;
 
@@ -69,7 +69,7 @@ abstract class Field extends Component
      */
     public function component($component)
     {
-        $this->component = 'form.fields.'.$component;
+        $this->component = 'fields.'.$component;
 
         return $this;
     }
@@ -86,7 +86,7 @@ abstract class Field extends Component
      */
     public function renderForShow()
     {
-        return view('components.'.$this->component, ['fieldObject' => $this, 'method' => 'show']);
+        return view('laraforms::components.'.$this->component, ['fieldObject' => $this, 'method' => 'show']);
     }
 
     /**
@@ -96,7 +96,7 @@ abstract class Field extends Component
      */
     public function renderForEditing()
     {
-        return view('components.'.$this->component, ['fieldObject' => $this, 'method' => 'edit']);
+        return view('laraforms::components.'.$this->component, ['fieldObject' => $this, 'method' => 'edit']);
     }
 
     /**

@@ -10,7 +10,7 @@ class BelongsTo extends Field
 
     public $options;
 
-    public string $component = 'forms.fields.belongs-to';
+    public string $component = 'fields.belongs-to';
 
     public function __construct($key, $label = '', $value = '')
     {
