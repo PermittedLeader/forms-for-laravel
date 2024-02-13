@@ -7,7 +7,7 @@ use Illuminate\Console\View\Components\Component;
 
 class Action extends Component
 {
-    public string $component = 'forms.actions.default';
+    public string $component = 'actions.default';
 
     protected $label;
 
