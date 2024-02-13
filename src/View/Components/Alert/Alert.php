@@ -1,5 +1,5 @@
 <?php
-namespace Permittedleader\Laraforms\View\Components;
+namespace Permittedleader\Laraforms\View\Components\Alert;
 
 use Illuminate\View\Component;
 
