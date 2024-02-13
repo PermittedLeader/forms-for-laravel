@@ -1,3 +1,31 @@
+@props(['level'=>'warning','size'=>'md','dismissable'=>false])
+@php
+    $level;
+        if ($level == 'success') {
+            $classes = 'border-success-500 bg-success-200 text-black';
+            $icon = 'fas fa-check fa-2x fa-fw text-success-500';
+            $buttonStyle = 'bg-success-700 text-success-200';
+        } elseif ($level == 'info') {
+            $classes = 'border-info-500 bg-info-200 text-black';
+            $icon = 'fas fa-info fa-2x fa-fw text-info-500';
+            $buttonStyle = 'bg-info-700 text-info-200';
+        } elseif ($level == 'warning') {
+            $classes = 'border-warning-500 bg-warning-200 text-black';
+            $icon = 'fas fa-exclamation fa-2x fa-fw text-warning-500';
+            $buttonStyle = 'bg-warning-700 text-warning-200';
+        } elseif ($level == 'danger') {
+            $classes = 'border-danger-500 bg-danger-200 text-black';
+            $icon = 'fas fa-times fa-2x fa-fw text-danger-500';
+            $buttonStyle = 'bg-danger-700 text-danger-200';
+        }
+        $dismissable = $dismissable;
+        $size = $size;
+        if ($size == 'sm') {
+            $classes .= ' text-xs my-1 px-2 py-2 border-l-4';
+        } elseif ($size == 'md') {
+            $classes .= ' my-3 px-3 py-2 border-l-8';
+        }
+@endphp
 <div x-data="{open: true}" class="border-solid rounded-sm {{ $classes }}" x-show="open" x-transition:leave="transition ease-in-out duration-300" x-transition:leave-start="opacity-100 transform scale-100" x-transition:leave-end="opacity-0 transform scale-0" role="alert">
     <div class="flex flex-row">
         <div class="flex-grow">
