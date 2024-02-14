@@ -14,6 +14,6 @@ class FormsServiceProvider extends ServiceProvider
 
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/forms.php','forms');
+        
     }
 }
