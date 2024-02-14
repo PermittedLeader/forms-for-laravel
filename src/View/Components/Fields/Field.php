@@ -1,6 +1,6 @@
 <?php
 
-namespace Permittedleader\Laraforms\View\Components\Fields;
+namespace Permittedleader\Forms\View\Components\Fields;
 
 use Closure;
 use Illuminate\Console\View\Components\Component;
@@ -86,7 +86,7 @@ abstract class Field extends Component
      */
     public function renderForShow()
     {
-        return view('laraforms::components.'.$this->component, ['fieldObject' => $this, 'method' => 'show']);
+        return view('forms::components.'.$this->component, ['fieldObject' => $this, 'method' => 'show']);
     }
 
     /**
@@ -96,7 +96,7 @@ abstract class Field extends Component
      */
     public function renderForEditing()
     {
-        return view('laraforms::components.'.$this->component, ['fieldObject' => $this, 'method' => 'edit']);
+        return view('forms::components.'.$this->component, ['fieldObject' => $this, 'method' => 'edit']);
     }
 
     /**

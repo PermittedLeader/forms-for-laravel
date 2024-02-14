@@ -1,11 +1,11 @@
 <?php
 
-namespace Permittedleader\Laraforms\Http\Livewire;
+namespace Permittedleader\Forms\Http\Livewire;
 
 use Closure;
 use Livewire\Component;
-use Permittedleader\Laraforms\View\Components\Fields\Field;
-use Permittedleader\Laraforms\View\Components\Actions\Action;
+use Permittedleader\Forms\View\Components\Fields\Field;
+use Permittedleader\Forms\View\Components\Actions\Action;
 
 abstract class Form extends Component
 {
@@ -157,6 +157,6 @@ abstract class Form extends Component
      */
     public function render()
     {
-        return view('laraforms::livewire.'.$this->component);
+        return view('forms::livewire.'.$this->component);
     }
 }

@@ -6,7 +6,7 @@
             @method($this->getFormMethod())
         @endif
     @endif
-    <x-laraforms::card>
+    <x-forms::card>
         <x-slot name="header">
             @if($method == "edit")
                 @lang('Edit') {{ $this->getLabel() }}
@@ -17,7 +17,7 @@
             @endif
         </x-slot>
         @if($errors->any())
-            <x-laraforms::alert level="warning">
+            <x-forms::alert level="warning">
                 <x-slot name="header">
                     {{ __('You have errors in your form') }}
                 </x-slot>
@@ -26,7 +26,7 @@
                     <li>{{ $error }}</li>
                 @endforeach
                 </ul>
-            </x-laraforms::alert>
+            </x-forms::alert>
         @endif
         @if($this->method == "edit")
             @foreach ($this->fieldsForEdit() as $field)
@@ -51,12 +51,12 @@
                     {{ $action->render() }}
                 @endforeach
                 @if ($this->method != "show")
-                <x-laraforms::form-button type="reset">Reset</x-laraforms::form-button>
-                <x-laraforms::form-button type="submit" color="bg-brand-500">Submit</x-laraforms::form-button>
+                <x-forms::form-button type="reset">Reset</x-forms::form-button>
+                <x-forms::form-button type="submit" color="bg-brand-500">Submit</x-forms::form-button>
                 @endif
             </x-slot>
         @endif
-    </x-laraforms::card>
+    </x-forms::card>
     @if ($this->method != "show")
     </form>
     @endif

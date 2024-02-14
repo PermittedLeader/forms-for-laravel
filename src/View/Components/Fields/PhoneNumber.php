@@ -1,6 +1,6 @@
 <?php
 
-namespace Permittedleader\Laraforms\View\Components\Fields;
+namespace Permittedleader\Forms\View\Components\Fields;
 
 use Propaganistas\LaravelPhone\PhoneNumber as LaravelPhonePhoneNumber;
 

@@ -1,11 +1,11 @@
 @if($method != "show")
-    <x-laraforms::input 
+    <x-forms::input 
         label="{{ $fieldObject->getLabel() }}" 
         name="{{ $fieldObject->key }}" 
         required="{{ $fieldObject->required }}"
         value="{{ old($fieldObject->key,$fieldObject->inputValue()) }}" />
 @else
-    <x-laraforms::show.text 
+    <x-forms::show.text 
         label="{{ $fieldObject->getLabel() }}" 
         name="{{ $fieldObject->key }}" 
         value="{{  $fieldObject->showValue() }}"

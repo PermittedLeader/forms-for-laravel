@@ -7,7 +7,7 @@ $randId = $name.bin2hex(random_bytes(2));
     <label class="font-bold" for="{{ $randId }}">
         {{ $label }}
         @if($hint)
-            <x-laraforms::hint class="ml-2">{{ $hint }}</x-laraforms::hint>
+            <x-forms::hint class="ml-2">{{ $hint }}</x-forms::hint>
         @endif
     </label>
 

@@ -30,27 +30,27 @@
         {{ $label }}
         
         @if ($required)
-            <x-laraforms::required /> 
+            <x-forms::required /> 
         @endif
     </div>
     @if($hint)
-        <x-laraforms::hint>{{ $hint }}</x-laraforms::hint>
+        <x-forms::hint>{{ $hint }}</x-forms::hint>
     @endif
     @error($name)
-        <x-laraforms::hint class="text-warning-700">{{ $message }}</x-laraforms::hint>
+        <x-forms::hint class="text-warning-700">{{ $message }}</x-forms::hint>
     @enderror
     <div class="flex flex-row items-center">
         @if($attributes->has('value') && $attributes['value'] !== "")
             <div class="p-2 pr-8 border-r border-gray-800 dark:border-gray-200 content-center">
-                <x-laraforms::icon icon="fa-solid fa-file" label="File name" />
+                <x-forms::icon icon="fa-solid fa-file" label="File name" />
                 {{ $attributes['value'] }}
             </div>
         @endif
         <label class="{{ $fieldClasses }}" for="{{ $id }}">
-            <x-laraforms::button-no-link>
+            <x-forms::button-no-link>
                 Choose file
-                <x-laraforms::icon.upload />
-            </x-laraforms::button-no-link>
+                <x-forms::icon.upload />
+            </x-forms::button-no-link>
         </label>
         <input type="file" {{ $attributes->whereStartsWith('wire:model') }} class="hidden" name="{{ $name }}" id="{{ $id }}" @required($required) /> 
     </div>

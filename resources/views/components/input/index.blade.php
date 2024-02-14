@@ -30,14 +30,14 @@
         {{ $label }}
         
         @if ($required)
-            <x-laraforms::required /> 
+            <x-forms::required /> 
         @endif
     </label>
     @if($hint)
-        <x-laraforms::hint>{{ $hint }}</x-laraforms::hint>
+        <x-forms::hint>{{ $hint }}</x-forms::hint>
     @endif
     @error($name)
-        <x-laraforms::hint class="text-warning-700">{{ $message }}</x-laraforms::hint>
+        <x-forms::hint class="text-warning-700">{{ $message }}</x-forms::hint>
     @enderror
     <input type="{{ $type }}" {{ $attributes->merge(['class'=>$fieldClasses]) }} name="{{ $name }}" id="{{ $id }}" @required($required) /> 
 </div>

@@ -1,6 +1,6 @@
 <?php
 
-namespace Permittedleader\Laraforms\View\Components\Actions;
+namespace Permittedleader\Forms\View\Components\Actions;
 
 use Closure;
 use Illuminate\Console\View\Components\Component;
@@ -72,7 +72,7 @@ class Action extends Component
      */
     public function render()
     {
-        return view('laraforms::components.'.$this->component, ['actionObject' => $this]);
+        return view('forms::components.'.$this->component, ['actionObject' => $this]);
     }
 
     /**

@@ -1,5 +1,5 @@
 {
-    "name": "permittedleader/laraforms",
+    "name": "permittedleader/forms-for-laravel",
     "description": "Forms for Laravel",
     "type": "project",
     "require": {
@@ -13,12 +13,12 @@
     "license": "GNU GPL v3",
     "autoload": {
         "psr-4": {
-            "Permittedleader\\Laraforms\\": "src/"
+            "Permittedleader\\Forms\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Permittedleader\\Laraforms\\Tests\\": "tests/"
+            "Permittedleader\\Forms\\Tests\\": "tests/"
         }
     },
     "authors": [
@@ -30,7 +30,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Permittedleader\\Laraforms\\LaraformsServiceProvider"
+                "Permittedleader\\Forms\\FormsServiceProvider"
             ]
         },
         "branch-alias": {

@@ -37,20 +37,20 @@
         $display['i'] = "";
     }
 @endphp
-<x-laraforms::fieldset label="{{ $label }}" name="{{ $name }}" {{ $attributes }}>
+<x-forms::fieldset label="{{ $label }}" name="{{ $name }}" {{ $attributes }}>
     @if($hint)
-        <x-laraforms::hint>{{ $hint }}</x-laraforms::hint>
+        <x-forms::hint>{{ $hint }}</x-forms::hint>
     @endif
     <div class="flex flex-row">
         @if($type=="date"||$type=="datetime")
             @if ($attributes->has('required'))
-                <span class="mr-2"><x-laraforms::input label="{{ __('Day') }}" name="{{$name}}[day]" type="number" min="1" max="31" in-block="show" value="{{ $display['d'] }}" required class="w-16"/></span>
-                <span class="mr-2"><x-laraforms::input label="{{ __('Month') }}" name="{{$name}}[month]" type="number" min="1" max="12" in-block="show" value="{{ $display['m'] }}" required class="w-16"/></span>
-                <span class="mr-2"><x-laraforms::input label="{{ __('Year') }}" name="{{$name}}[year]" type="number" min="0" max="9999" in-block="show" value="{{ $display['y'] }}" required class="w-20"/></span>
+                <span class="mr-2"><x-forms::input label="{{ __('Day') }}" name="{{$name}}[day]" type="number" min="1" max="31" in-block="show" value="{{ $display['d'] }}" required class="w-16"/></span>
+                <span class="mr-2"><x-forms::input label="{{ __('Month') }}" name="{{$name}}[month]" type="number" min="1" max="12" in-block="show" value="{{ $display['m'] }}" required class="w-16"/></span>
+                <span class="mr-2"><x-forms::input label="{{ __('Year') }}" name="{{$name}}[year]" type="number" min="0" max="9999" in-block="show" value="{{ $display['y'] }}" required class="w-20"/></span>
             @else
-                <span class="mr-2"><x-laraforms::input label="{{ __('Day') }}" name="{{$name}}[day]" type="number" min="1" max="31" in-block="show" value="{{ $display['d'] }}" class="w-16" /></span>
-                <span class="mr-2"><x-laraforms::input label="{{ __('Month') }}" name="{{$name}}[month]" type="number" min="1" max="12" in-block="show" value="{{ $display['m'] }}" class="w-16"/></span>
-                <span class="mr-2"><x-laraforms::input label="{{ __('Year') }}" name="{{$name}}[year]" type="number" min="0" max="9999" in-block="show" value="{{ $display['y'] }}" class="w-20"/></span>
+                <span class="mr-2"><x-forms::input label="{{ __('Day') }}" name="{{$name}}[day]" type="number" min="1" max="31" in-block="show" value="{{ $display['d'] }}" class="w-16" /></span>
+                <span class="mr-2"><x-forms::input label="{{ __('Month') }}" name="{{$name}}[month]" type="number" min="1" max="12" in-block="show" value="{{ $display['m'] }}" class="w-16"/></span>
+                <span class="mr-2"><x-forms::input label="{{ __('Year') }}" name="{{$name}}[year]" type="number" min="0" max="9999" in-block="show" value="{{ $display['y'] }}" class="w-20"/></span>
             @endif
         @endif
         @if($type=="datetime")
@@ -58,11 +58,11 @@
         @endif
         @if($type=="time"||$type=="datetime")
             @if ($attributes->has('required'))
-                <span class="mr-2"><x-laraforms::input label="{{ __('Hours') }}" name="{{$name}}[hour]" type="number" min="0" in-block="show" value="{{ $display['h'] }}" required class="w-16"/></span>
-                <span class="mr-2"><x-laraforms::input label="{{ __('Minutes') }}" name="{{$name}}[minute]" type="number" min="0" max="59" in-block="show" value="{{ $display['i'] }}" required class="w-16"/></span>
+                <span class="mr-2"><x-forms::input label="{{ __('Hours') }}" name="{{$name}}[hour]" type="number" min="0" in-block="show" value="{{ $display['h'] }}" required class="w-16"/></span>
+                <span class="mr-2"><x-forms::input label="{{ __('Minutes') }}" name="{{$name}}[minute]" type="number" min="0" max="59" in-block="show" value="{{ $display['i'] }}" required class="w-16"/></span>
             @else
-                <span class="mr-2"><x-laraforms::input label="{{ __('Hours') }}" name="{{$name}}[hour]" type="number" min="0" in-block="show" value="{{ $display['h'] }}" class="w-16"/></span>
-                <span class="mr-2"><x-laraforms::input label="{{ __('Minutes') }}" name="{{$name}}[minute]" type="number" min="0" max="59" in-block="show" value="{{ $display['i'] }}" class="w-16"
+                <span class="mr-2"><x-forms::input label="{{ __('Hours') }}" name="{{$name}}[hour]" type="number" min="0" in-block="show" value="{{ $display['h'] }}" class="w-16"/></span>
+                <span class="mr-2"><x-forms::input label="{{ __('Minutes') }}" name="{{$name}}[minute]" type="number" min="0" max="59" in-block="show" value="{{ $display['i'] }}" class="w-16"
                 /></span>
             @endif
         @endif
