@@ -1,3 +1,3 @@
-# laraforms
+# Forms for Laravel
  
-Forms for Laravel
+Forms built in the TALL stack
