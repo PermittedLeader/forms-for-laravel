@@ -20,8 +20,8 @@
 @endphp
 @error($name)
     @php
-        $divClasses .= " border-warning-500 pl-3";
-        $textClasses .= " text-warning-700";
+        $divClasses .= " border-warning-mid pl-3";
+        $textClasses .= " text-warning-dark";
         $fieldClasses .= "";
     @endphp
 @enderror
@@ -30,27 +30,27 @@
         {{ $label }}
         
         @if ($required)
-            <x-forms::required /> 
+            <x-tiffey::required /> 
         @endif
     </div>
     @if($hint)
-        <x-forms::hint>{{ $hint }}</x-forms::hint>
+        <x-tiffey::hint>{{ $hint }}</x-tiffey::hint>
     @endif
     @error($name)
-        <x-forms::hint class="text-warning-700">{{ $message }}</x-forms::hint>
+        <x-tiffey::hint class="text-warning-dark">{{ $message }}</x-tiffey::hint>
     @enderror
     <div class="flex flex-row items-center">
         @if($attributes->has('value') && $attributes['value'] !== "")
             <div class="p-2 pr-8 border-r border-gray-800 dark:border-gray-200 content-center">
-                <x-forms::icon icon="fa-solid fa-file" label="File name" />
+                <x-tiffey::icon icon="fa-solid fa-file" label="File name" />
                 {{ $attributes['value'] }}
             </div>
         @endif
         <label class="{{ $fieldClasses }}" for="{{ $id }}">
-            <x-forms::button-no-link>
+            <x-tiffey::button-no-link>
                 Choose file
-                <x-forms::icon.upload />
-            </x-forms::button-no-link>
+                <x-tiffey::icon.upload />
+            </x-tiffey::button-no-link>
         </label>
         <input type="file" {{ $attributes->whereStartsWith('wire:model') }} class="hidden" name="{{ $name }}" id="{{ $id }}" @required($required) /> 
     </div>

@@ -6,7 +6,7 @@
             @method($this->getFormMethod())
         @endif
     @endif
-    <x-forms::card>
+    <x-tiffey::card>
         <x-slot name="header">
             @if($method == "edit")
                 @lang('Edit') {{ $this->getLabel() }}
@@ -17,7 +17,7 @@
             @endif
         </x-slot>
         @if($errors->any())
-            <x-forms::alert level="warning">
+            <x-tiffey::alert level="warning">
                 <x-slot name="header">
                     {{ __('You have errors in your form') }}
                 </x-slot>
@@ -26,7 +26,7 @@
                     <li>{{ $error }}</li>
                 @endforeach
                 </ul>
-            </x-forms::alert>
+            </x-tiffey::alert>
         @endif
         @if($this->method == "edit")
             @foreach ($this->fieldsForEdit() as $field)
@@ -51,12 +51,12 @@
                     {{ $action->render() }}
                 @endforeach
                 @if ($this->method != "show")
-                <x-forms::form-button type="reset">Reset</x-forms::form-button>
-                <x-forms::form-button type="submit" color="bg-brand-500">Submit</x-forms::form-button>
+                <x-tiffey::form-button type="reset">Reset</x-tiffey::form-button>
+                <x-tiffey::form-button type="submit" color="bg-brand-mid">Submit</x-tiffey::form-button>
                 @endif
             </x-slot>
         @endif
-    </x-forms::card>
+    </x-tiffey::card>
     @if ($this->method != "show")
     </form>
     @endif

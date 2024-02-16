@@ -10,9 +10,9 @@
 @endphp
 @error($name)
     @php
-        $fieldsetClasses .= " border-warning-500 pl-3";
+        $fieldsetClasses .= " border-warning-mid pl-3";
         $textClasses = "";
-        $legendClasses .= " text-warning-700";
+        $legendClasses .= " text-warning-dark";
     @endphp
 @enderror
 <fieldset {{ $attributes->merge(['class'=>$fieldsetClasses]) }}>
@@ -23,10 +23,10 @@
     </div>
 
     @if($hint)
-        <x-forms::hint class="">{{ $hint }}</x-forms::hint>
+        <x-tiffey::hint class="">{{ $hint }}</x-tiffey::hint>
     @endif
     @error($name)
-        <x-forms::hint class="text-warning-700">{{ $message }}</x-forms::hint>
+        <x-tiffey::hint class="text-warning-dark">{{ $message }}</x-tiffey::hint>
     @enderror
     {{ $slot }}
 </fieldset>

@@ -23,11 +23,11 @@
         {{ $label }}
     </label>
     @if($hint)
-        <x-forms::hint>{{ $hint }}</x-forms::hint>
+        <x-tiffey::hint>{{ $hint }}</x-tiffey::hint>
     @endif
     
     <div {{ $attributes->merge(['class'=>$fieldClasses]) }}" id="{{ $id }}">
-        <x-forms::hint>Formatted text:</x-forms::hint> 
+        <x-tiffey::hint>Formatted text:</x-tiffey::hint> 
         {!! \Illuminate\Support\Str::markdown($value) !!} 
     </div>
 </div>

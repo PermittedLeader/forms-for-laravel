@@ -2,21 +2,21 @@
 @php
     $level;
         if ($level == 'success') {
-            $classes = 'border-success-500 bg-success-200 text-black';
-            $icon = 'fas fa-check fa-2x fa-fw text-success-500';
-            $buttonStyle = 'bg-success-700 text-success-200';
+            $classes = 'border-success-mid bg-success-light text-black';
+            $icon = 'fas fa-check fa-2x fa-fw text-success-mid';
+            $buttonStyle = 'bg-success-dark text-success-light';
         } elseif ($level == 'info') {
-            $classes = 'border-info-500 bg-info-200 text-black';
-            $icon = 'fas fa-info fa-2x fa-fw text-info-500';
-            $buttonStyle = 'bg-info-700 text-info-200';
+            $classes = 'border-info-mid bg-info-light text-black';
+            $icon = 'fas fa-info fa-2x fa-fw text-info-mid';
+            $buttonStyle = 'bg-info-dark text-info-light';
         } elseif ($level == 'warning') {
-            $classes = 'border-warning-500 bg-warning-200 text-black';
-            $icon = 'fas fa-exclamation fa-2x fa-fw text-warning-500';
-            $buttonStyle = 'bg-warning-700 text-warning-200';
+            $classes = 'border-warning-mid bg-warning-light text-black';
+            $icon = 'fas fa-exclamation fa-2x fa-fw text-warning-mid';
+            $buttonStyle = 'bg-warning-dark text-warning-light';
         } elseif ($level == 'danger') {
-            $classes = 'border-danger-500 bg-danger-200 text-black';
-            $icon = 'fas fa-times fa-2x fa-fw text-danger-500';
-            $buttonStyle = 'bg-danger-700 text-danger-200';
+            $classes = 'border-danger-mid bg-danger-light text-black';
+            $icon = 'fas fa-times fa-2x fa-fw text-danger-mid';
+            $buttonStyle = 'bg-danger-dark text-danger-light';
         }
         $dismissable = $dismissable;
         $size = $size;

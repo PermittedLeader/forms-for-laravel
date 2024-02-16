@@ -20,23 +20,23 @@
 @endphp
 @error($name)
     @php
-        $divClasses .= " pl-3 border-warning-500";
-        $textClasses .= " text-warning-500";
-        $fieldClasses .= " border-warning-500";
+        $divClasses .= " pl-3 border-warning-mid";
+        $textClasses .= " text-warning-mid";
+        $fieldClasses .= " border-warning-mid";
     @endphp
 @enderror
 <div class="{{ $divClasses }}">
     <label class="{{ $textClasses }}" for="{{ $id }}">
         {{ $label }}
         @if ($required)
-            <x-forms::required />
+            <x-tiffey::required />
         @endif
     </label>
     @if($hint)
-        <x-forms::hint>{{ $hint }}</x-forms::hint>
+        <x-tiffey::hint>{{ $hint }}</x-tiffey::hint>
     @endif
     @error($name)
-        <x-forms::hint class="text-pink">{{ $message }}</x-forms::hint>
+        <x-tiffey::hint class="text-pink">{{ $message }}</x-tiffey::hint>
     @enderror
     <textarea {{ $attributes->merge(['class'=>$fieldClasses]) }} name="{{ $name }}" id="{{ $id }}" @required($required)>{{ $slot }}</textarea>
 </div>

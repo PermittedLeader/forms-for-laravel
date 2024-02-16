@@ -23,9 +23,9 @@
 @endphp
 @error($name)
     @php
-        $divClasses .= " border-warning-500 pl-3";
-        $textClasses .= " text-warning-700";
-        $fieldClasses .= " border-warning-500";
+        $divClasses .= " border-warning-mid pl-3";
+        $textClasses .= " text-warning-dark";
+        $fieldClasses .= " border-warning-mid";
     @endphp
 @enderror
 <div class="{{ $divClasses }}">
@@ -33,14 +33,14 @@
         {{ $label }}
         
         @if ($required)
-            <x-forms::required />
+            <x-tiffey::required />
         @endif
     </label>
     @if($hint)
-        <x-forms::hint>{{ $hint }}</x-forms::hint>
+        <x-tiffey::hint>{{ $hint }}</x-tiffey::hint>
     @endif
     @error($name)
-        <x-forms::hint class="text-warning-700">{{ $message }}</x-forms::hint>
+        <x-tiffey::hint class="text-warning-dark">{{ $message }}</x-tiffey::hint>
     @enderror
     <select id="{{ $id }}" {{ $attributes->merge(['class'=>$fieldClasses]) }} name="{{ $name }}" @required($required)>
         {{ $slot }}

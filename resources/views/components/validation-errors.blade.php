@@ -1,10 +1,10 @@
 @if ($errors->any())
-    <x-forms::alert level="warning">
+    <x-tiffey::alert level="warning">
         <x-slot name="header">
             {{ __('Whoops! Something went wrong.') }}
         </x-slot>
         @foreach ($errors->all() as $error)
                 {{ $error }}
             @endforeach
-    </x-forms::alert>
+    </x-tiffey::alert>
 @endif
