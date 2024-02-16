@@ -33,7 +33,7 @@
         {{ $label }}
         
         @if ($required)
-            <x-tiffey::required />
+            <x-tiffey::input.required />
         @endif
     </label>
     @if($hint)
