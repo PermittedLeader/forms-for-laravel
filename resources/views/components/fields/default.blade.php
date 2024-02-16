@@ -1,5 +1,5 @@
 @if($method != "show")
-    <x-forms::input 
+    <x-tiffey::input 
         label="{{ $fieldObject->getLabel() }}" 
         name="{{ $fieldObject->key }}" 
         required="{{ $fieldObject->required }}"

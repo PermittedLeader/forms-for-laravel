@@ -1,1 +1,0 @@
-<span class="text-danger-mid align-top" aria-label="{{ __('Required') }}">*</span>
