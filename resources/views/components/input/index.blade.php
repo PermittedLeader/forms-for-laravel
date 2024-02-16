@@ -34,10 +34,10 @@
         @endif
     </label>
     @if($hint)
-        <x-tiffey::hint>{{ $hint }}</x-tiffey::hint>
+        <x-tiffey::input.hint>{{ $hint }}</x-tiffey::input.hint>
     @endif
     @error($name)
-        <x-tiffey::hint class="text-warning-dark">{{ $message }}</x-tiffey::hint>
+        <x-tiffey::input.hint class="text-warning-dark">{{ $message }}</x-tiffey::input.hint>
     @enderror
     <input type="{{ $type }}" {{ $attributes->merge(['class'=>$fieldClasses]) }} name="{{ $name }}" id="{{ $id }}" @required($required) /> 
 </div>

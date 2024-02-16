@@ -10,7 +10,7 @@
     }
     $divClasses = "flex flex-col";
     $textClasses = "";
-    $fieldClasses = "w-full my-1 p-2 border-gray-200 dark:bg-gray-900 dark:text-white rounded";
+    $fieldClasses = "w-full my-1 p-2 ".config('tiffey.border-color')." dark:bg-gray-900 dark:text-white rounded";
     if($inBlock=="show"){
         $textClasses .= " font-bold ";
         $divClasses .= " px-3 ";
@@ -37,10 +37,10 @@
         @endif
     </label>
     @if($hint)
-        <x-tiffey::hint>{{ $hint }}</x-tiffey::hint>
+        <x-tiffey::input.hint>{{ $hint }}</x-tiffey::input.hint>
     @endif
     @error($name)
-        <x-tiffey::hint class="text-warning-dark">{{ $message }}</x-tiffey::hint>
+        <x-tiffey::input.hint class="text-warning-dark">{{ $message }}</x-tiffey::input.hint>
     @enderror
     <select id="{{ $id }}" {{ $attributes->merge(['class'=>$fieldClasses]) }} name="{{ $name }}" @required($required)>
         {{ $slot }}

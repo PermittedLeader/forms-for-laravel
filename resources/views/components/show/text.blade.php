@@ -23,7 +23,7 @@
         {{ $label }}
     </label>
     @if($hint)
-        <x-tiffey::hint>{{ $hint }}</x-tiffey::hint>
+        <x-tiffey::input.hint>{{ $hint }}</x-tiffey::input.hint>
     @endif
     <div {{ $attributes->merge(['class'=>$fieldClasses]) }}" id="{{ $id }}">{{ $value }}</div>
 </div>

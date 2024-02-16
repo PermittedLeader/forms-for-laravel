@@ -34,10 +34,10 @@
         @endif
     </div>
     @if($hint)
-        <x-tiffey::hint>{{ $hint }}</x-tiffey::hint>
+        <x-tiffey::input.hint>{{ $hint }}</x-tiffey::input.hint>
     @endif
     @error($name)
-        <x-tiffey::hint class="text-warning-dark">{{ $message }}</x-tiffey::hint>
+        <x-tiffey::input.hint class="text-warning-dark">{{ $message }}</x-tiffey::input.hint>
     @enderror
     <div class="flex flex-row items-center">
         @if($attributes->has('value') && $attributes['value'] !== "")

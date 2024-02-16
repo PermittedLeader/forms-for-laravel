@@ -7,7 +7,7 @@ $randId = $name.bin2hex(random_bytes(2));
     <label class="font-bold" for="{{ $randId }}">
         {{ $label }}
         @if($hint)
-            <x-tiffey::hint class="ml-2">{{ $hint }}</x-tiffey::hint>
+            <x-tiffey::input.hint class="ml-2">{{ $hint }}</x-tiffey::input.hint>
         @endif
     </label>
 

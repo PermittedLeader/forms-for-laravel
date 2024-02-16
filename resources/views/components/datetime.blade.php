@@ -39,7 +39,7 @@
 @endphp
 <x-forms::fieldset label="{{ $label }}" name="{{ $name }}" {{ $attributes }}>
     @if($hint)
-        <x-tiffey::hint>{{ $hint }}</x-tiffey::hint>
+        <x-tiffey::input.hint>{{ $hint }}</x-tiffey::input.hint>
     @endif
     <div class="flex flex-row">
         @if($type=="date"||$type=="datetime")

@@ -23,10 +23,10 @@
     </div>
 
     @if($hint)
-        <x-tiffey::hint class="">{{ $hint }}</x-tiffey::hint>
+        <x-tiffey::input.hint class="">{{ $hint }}</x-tiffey::input.hint>
     @endif
     @error($name)
-        <x-tiffey::hint class="text-warning-dark">{{ $message }}</x-tiffey::hint>
+        <x-tiffey::input.hint class="text-warning-dark">{{ $message }}</x-tiffey::input.hint>
     @enderror
     {{ $slot }}
 </fieldset>
