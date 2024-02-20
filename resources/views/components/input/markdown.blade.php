@@ -20,6 +20,6 @@
     });
 </script>
 @endpush
-<x-forms::input.textarea label="{{ $label }}" {{ $attributes }} name="{{ $name }}" id="{{ $id }}" required="{{ $fieldObject->required }}">
+<x-forms::input.textarea label="{{ $label }}" {{ $attributes }} name="{{ $name }}" id="{{ $id }}" required="{{ $required }}">
     {{ $slot }}
 </x-forms::input.textarea>
