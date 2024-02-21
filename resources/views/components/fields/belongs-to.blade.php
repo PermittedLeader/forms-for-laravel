@@ -1,5 +1,5 @@
 @if($method != "show")
-    <x-forms::input.select label="{{ $fieldObject->getLabel() }}" name="{{ $fieldObject->key }}" required="{{ $fieldObject->required }}">
+    <x-tiffey::input.select label="{{ $fieldObject->getLabel() }}" name="{{ $fieldObject->key }}" required="{{ $fieldObject->required }}">
         @foreach ($fieldObject->options as $option)
             <option 
                 value="{{ $option->{$fieldObject->keyAttribute} }}" 
@@ -13,7 +13,7 @@
                 {{ $option->{$fieldObject->displayAttribute} }}
             </option>
         @endforeach 
-    </x-forms::input.select>
+    </x-tiffey::input.select>
 @else
     <x-forms::show.text 
         label="{{ $fieldObject->getLabel() }}" 
