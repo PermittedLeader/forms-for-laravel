@@ -25,6 +25,8 @@ class Action extends Component
 
     public $icon;
 
+    public $gate = true;
+
     /**
      * Action component
      *
@@ -63,6 +65,19 @@ class Action extends Component
     public function getLabel()
     {
         return __($this->label);
+    }
+
+    /**
+     * Define if the user should have this action used for this Action
+     *
+     * @param  bool  $gate
+     * @return self
+     */
+    public function gate(bool $gate)
+    {
+        $this->gate = $gate;
+
+        return $this;
     }
 
     /**
