@@ -6,7 +6,7 @@
         "livewire/livewire": "^3.0",
         "laravel/framework": "^10.0",
         "propaganistas/laravel-phone": "^5.1",
-        "permittedleader/tiffey": "~1.0.0-dev"
+        "permittedleader/tiffey": "~1.0.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.10"
