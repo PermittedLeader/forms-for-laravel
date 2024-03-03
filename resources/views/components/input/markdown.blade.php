@@ -16,8 +16,12 @@
     const easyMDE = new EasyMDE({
         element: document.getElementById('{{ $id }}'),
         spellChecker: false,
-        nativeSpellCheck: true
+        nativeSpellCheck: true,
+        forceSync: true
     });
+    easyMDE.codemirror.on('change',function(){
+        document.getElementById('{{ $id }}').dispatchEvent(new Event('input'));
+    })
 </script>
 @endpush
 <x-tiffey::input.textarea label="{{ $label }}" {{ $attributes }} name="{{ $name }}" id="{{ $id }}" required="{{ $required }}">
