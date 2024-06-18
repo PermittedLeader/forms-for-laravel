@@ -71,9 +71,9 @@ class DateTime extends Flatpickr
                 break;
         }
 
-        $this->divClasses = "flex flex-col w-full h-full";
+        $this->divClasses = "flatpickr-container flex flex-col w-full h-full";
         $this->textClasses = "text-black dark:text-white";
-        $this->fieldClasses = "h-full my-1 p-2 border ".config('tiffey.border-color')." dark:bg-gray-900 dark:text-white rounded";
+        $this->fieldClasses = "flatpickr-input h-full my-1 p-2 border ".config('tiffey.border-color')." dark:bg-gray-900 dark:text-white rounded";
 
         if($inBlock=="show"){
             $this->textClasses .= " font-bold";
