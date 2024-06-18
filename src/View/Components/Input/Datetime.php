@@ -3,16 +3,19 @@
 namespace Permittedleader\Forms\View\Components\Input;
 
 use Carbon\Carbon;
-use Asdh\LaravelFlatpickr\Components\Flatpickr;
 use Illuminate\View\View;
+use Illuminate\Support\Str;
+use Asdh\LaravelFlatpickr\Components\Flatpickr;
 
 class Datetime extends Flatpickr
 {
+    public string $name;
+
     public function __construct(
         public string $label,
         public string $type,
         public bool $required = false,
-        public ?string $name = null,
+        ?string $name = null,
         public array $config = [],
         public string|int|null $id = null,
         public bool $showTime = false,
