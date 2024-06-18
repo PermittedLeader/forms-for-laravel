@@ -60,4 +60,3 @@
             </a>
         @endif
     </div>
-</x-forms::fieldset>
