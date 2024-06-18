@@ -9,7 +9,7 @@ class FormsServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->loadViewsFrom(__DIR__.'/../resources/views/','forms');
-        Blade::componentNamespace('Forms\\Views\\Components','forms');
+        Blade::componentNamespace('Permittedleader\\Forms\\View\\Components','forms');
     }
 
     public function register()

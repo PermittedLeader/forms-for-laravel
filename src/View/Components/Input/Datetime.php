@@ -7,15 +7,19 @@ use Illuminate\View\View;
 use Illuminate\Support\Str;
 use Asdh\LaravelFlatpickr\Components\Flatpickr;
 
-class Datetime extends Flatpickr
+class DateTime extends Flatpickr
 {
     public string $name;
+    public string $divClasses;
+    public string $fieldClasses;
+    public string $textClasses;
 
     public function __construct(
         public string $label,
         public string $type,
         public bool $required = false,
         ?string $name = null,
+        ?string $inBlock = null,
         public array $config = [],
         public string|int|null $id = null,
         public bool $showTime = false,
@@ -46,6 +50,10 @@ class Datetime extends Flatpickr
         } else {
             $this->name = $name;
         }
+
+        if(!$id){
+            $id= Str::snake(preg_replace('/[^A-Za-z0-9_]/',' ',$name));
+        }
     
         switch ($type) {
             case 'date':
@@ -63,11 +71,23 @@ class Datetime extends Flatpickr
                 break;
         }
 
+        $this->divClasses = "flex flex-col w-full h-full";
+        $this->textClasses = "text-black dark:text-white";
+        $this->fieldClasses = "h-full my-1 p-2 border ".config('tiffey.border-color')." dark:bg-gray-900 dark:text-white rounded";
+
+        if($inBlock=="show"){
+            $this->textClasses .= " font-bold";
+        } elseif($inBlock){
+            $this->textClasses .= " sr-only";
+        } else {
+            $this->textClasses .= " font-bold text-lg";
+            $this->divClasses .= " mb-3 border-l-4 border-transparent";
+        }
+
         parent::__construct(
             $this->config,
             $this->id,
             $this->showTime,
-            $this->disableMobile,
             $this->dateFormat,
             $this->timeFormat,
             $this->altFormat,
@@ -87,11 +107,12 @@ class Datetime extends Flatpickr
             $this->showWeekNumbers,
             $this->time24hr,
             $this->clearable,
+            $this->disableMobile,
         );
     }
 
     public function render(): View
     {
-        return view('components.input.datetime');
+        return view('forms::components.input.datetime');
     }
 }
