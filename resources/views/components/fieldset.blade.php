@@ -18,7 +18,10 @@
 <fieldset {{ $attributes->merge(['class'=>$fieldsetClasses]) }}>
     <div class="">
         <legend class="{{ $legendClasses }}">
-            {{ $label }}
+            {{ $label }} 
+            @if ($required)
+                <x-tiffey::input.required /> 
+            @endif
         </legend>
     </div>
 
