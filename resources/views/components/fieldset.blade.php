@@ -1,4 +1,4 @@
-@props(['label', 'name'=>false,'hint'=>false, 'error'=>false])
+@props(['label', 'name'=>false,'hint'=>false, 'error'=>false, 'required'=>false])
 @php
     if(!$name){
         $name = Str::snake($label);
