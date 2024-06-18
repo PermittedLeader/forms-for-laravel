@@ -26,6 +26,10 @@
     easyMDE_{{ $id }}.codemirror.on('change',function(){
         document.getElementById('{{ $id }}').dispatchEvent(new Event('input'));
     })
+    @if($required)
+    document.getElementById('{{ $id }}').setAttribute('required', false); 
+    easyMDE_{{ $id }}.codemirror.display.input.textarea.setAttribute('required',true)
+    @endif
 </script>
 @endpush
 <x-tiffey::input.textarea label="{{ $label }}" {{ $attributes }} name="{{ $name }}" id="{{ $id }}" required="{{ $required }}">
