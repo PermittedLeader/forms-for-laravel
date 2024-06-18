@@ -8,10 +8,14 @@
     }
 @endphp
 @push('styles')
+@once
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.css">
+@endonce
 @endpush
 @push('scripts')
+@once
 <script src="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.js"></script>
+@endonce
 <script>
     const easyMDE_{{ $id }} = new EasyMDE({
         element: document.getElementById('{{ $id }}'),

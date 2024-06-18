@@ -1,9 +1,13 @@
 @push('styles')
+@once
 <x-flatpickr::style />
+@endonce
 @endpush
 
 @push('scripts')
+@once
 <x-flatpickr::script />
+@endonce
 @endpush
 
 @error($name)
