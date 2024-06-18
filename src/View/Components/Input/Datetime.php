@@ -10,6 +10,7 @@ class Datetime extends Flatpickr
     public function __construct(
         public string $label,
         public string $type,
+        public bool $required = false,
         public ?string $name = null,
         public array $config = [],
         public string|int|null $id = null,
