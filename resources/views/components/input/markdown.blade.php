@@ -13,13 +13,13 @@
 @push('scripts')
 <script src="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.js"></script>
 <script>
-    const easyMDE = new EasyMDE({
+    const easyMDE_{{ $id }} = new EasyMDE({
         element: document.getElementById('{{ $id }}'),
         spellChecker: false,
         nativeSpellCheck: true,
         forceSync: true
     });
-    easyMDE.codemirror.on('change',function(){
+    easyMDE_{{ $id }}.codemirror.on('change',function(){
         document.getElementById('{{ $id }}').dispatchEvent(new Event('input'));
     })
 </script>
