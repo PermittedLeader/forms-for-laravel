@@ -6,7 +6,7 @@
 
 @push('scripts')
 @once
-<x-flatpickr::script />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.9/flatpickr.min.js"></script>
 @endonce
 @endpush
 
