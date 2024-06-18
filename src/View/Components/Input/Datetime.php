@@ -4,6 +4,7 @@ namespace Permittedleader\Forms\View\Components\Input;
 
 use Carbon\Carbon;
 use Asdh\LaravelFlatpickr\Components\Flatpickr;
+use Illuminate\View\View;
 
 class Datetime extends Flatpickr
 {
@@ -84,5 +85,10 @@ class Datetime extends Flatpickr
             $this->time24hr,
             $this->clearable,
         );
+    }
+
+    public function render(): View
+    {
+        return view('components.input.datetime');
     }
 }
