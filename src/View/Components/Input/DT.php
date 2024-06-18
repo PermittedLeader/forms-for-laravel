@@ -18,6 +18,8 @@ class DateTime extends Flatpickr
         public string $label,
         public string $type,
         public bool $required = false,
+        public ?string $hint = null,
+        public $error = false,
         ?string $name = null,
         ?string $inBlock = null,
         public array $config = [],
