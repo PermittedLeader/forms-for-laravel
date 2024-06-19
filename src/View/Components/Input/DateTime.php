@@ -54,7 +54,7 @@ class DateTime extends Flatpickr
         }
 
         if(!$id){
-            $id= Str::snake(preg_replace('/[^A-Za-z0-9_]/',' ',$name));
+            $id= Str::snake(preg_replace('/[^A-Za-z0-9_]/',' ',$this->name));
         }
     
         switch ($type) {

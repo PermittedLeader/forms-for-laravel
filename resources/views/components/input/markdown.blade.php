@@ -27,8 +27,7 @@
         document.getElementById('{{ $id }}').dispatchEvent(new Event('input'));
     })
     @if($required)
-    document.getElementById('{{ $id }}').setAttribute('required', false); 
-    easyMDE_{{ $id }}.codemirror.display.input.textarea.setAttribute('required',true)
+    document.getElementById('{{ $id }}').setAttribute('required', false);
     @endif
 </script>
 @endpush
