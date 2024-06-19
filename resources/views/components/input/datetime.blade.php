@@ -1,6 +1,6 @@
 @push('styles')
 @once
-<x-flatpickr::style />
+<link src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.9/flatpickr.min.css" rel="stylesheet" />
 @endonce
 @endpush
 
