@@ -24,6 +24,7 @@ class DateTime extends Flatpickr
         ?string $inBlock = null,
         public array $config = [],
         public string|int|null $id = null,
+        public bool $showDate = true,
         public bool $showTime = false,
         public string $dateFormat = 'Y-m-d',
         public string $timeFormat = 'H:i',
@@ -45,6 +46,7 @@ class DateTime extends Flatpickr
         public bool $time24hr = true,
         public bool $clearable = false,
         public bool $disableMobile = true,
+        public bool $noCalendar = false,
     )
     {
         if(!$name){
@@ -59,23 +61,27 @@ class DateTime extends Flatpickr
     
         switch ($type) {
             case 'date':
-                
+                $this->altFormat = "j F Y";
                 break;
     
             case 'datetime':
+                $this->altFormat = "j F Y, H:i";
                 $this->showTime = true;
                 $this->time24hr = true;
                 break;
     
             case 'time':
+                $this->altFormat = "H:i";
                 $this->showTime = true;
+                $this->showDate = false;
                 $this->time24hr = true;
+                $this->noCalendar = true;
                 break;
         }
 
         $this->divClasses = "flatpickr-container flex flex-col w-full h-full";
         $this->textClasses = "text-black dark:text-white";
-        $this->fieldClasses = "flatpickr-input h-full my-1 p-2 border ".config('tiffey.border-color')." dark:bg-gray-900 dark:text-white rounded";
+        $this->fieldClasses = "flatpickr-input w-full my-1 p-2 border ".config('tiffey.border-color')." dark:bg-gray-900 dark:text-white rounded";
 
         if($inBlock=="show"){
             $this->textClasses .= " font-bold";
@@ -111,6 +117,28 @@ class DateTime extends Flatpickr
             $this->clearable,
             $this->disableMobile,
         );
+    }
+
+    public function config(): array
+    {
+        $configArray = parent::config();
+        $configArray['noCalendar'] = $this->noCalendar;
+        $configArray['dateFormat'] = $this->dateFormat();
+        $configArray['altFormat'] = $this->altFormat ?: $this->dateFormat();
+        return $configArray;
+    }
+
+    private function dateFormat(): string
+    {
+        if($this->showTime && $this->showDate){
+            return "{$this->dateFormat} {$this->timeFormat}";
+        } elseif ($this->showTime && !$this->showDate){
+            return "{$this->timeFormat}";
+        } elseif (!$this->showTime && $this->showDate){
+            return "{$this->dateFormat}";
+        } else {
+            return "";
+        }
     }
 
     public function render(): View
