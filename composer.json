@@ -9,9 +9,6 @@
         "permittedleader/tiffey": "^1.0",
         "asdh/laravel-flatpickr": "^2.2"
     },
-    "require-dev": {
-        "barryvdh/laravel-debugbar": "^3.10"
-    },
     "repositories": {
         "tiffey": {
             "type": "vcs",
