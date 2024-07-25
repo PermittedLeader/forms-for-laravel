@@ -56,26 +56,22 @@ class DateTime extends Flatpickr
         }
 
         if(!$id){
-            $id= Str::snake(preg_replace('/[^A-Za-z0-9_]/',' ',$this->name));
+            $this->id= Str::snake(preg_replace('/[^A-Za-z0-9_]/',' ',$this->name));
         }
     
         switch ($type) {
             case 'date':
-                $this->altFormat = "j F Y";
+                
                 break;
     
             case 'datetime':
-                $this->altFormat = "j F Y, H:i";
                 $this->showTime = true;
                 $this->time24hr = true;
                 break;
     
             case 'time':
-                $this->altFormat = "H:i";
                 $this->showTime = true;
-                $this->showDate = false;
                 $this->time24hr = true;
-                $this->noCalendar = true;
                 break;
         }
 
