@@ -4,6 +4,7 @@
         name="{{ $fieldObject->key }}" 
         required="{{ $fieldObject->required }}" 
         type="{{ $fieldObject->type }}"
+        value="{{ $fieldObject->value }}"
         />
 @else
     <x-forms::show.text
