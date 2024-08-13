@@ -1,0 +1,1 @@
+<x-tiffey::input.textarea {{ $attributes }} />

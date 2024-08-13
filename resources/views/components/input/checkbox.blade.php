@@ -1,0 +1,1 @@
+<x-tiffey::input.checkbox {{ $attributes }} />
