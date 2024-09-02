@@ -59,7 +59,7 @@ class Select extends Field
         return $this;
     }
 
-    public function options($data): Collection
+    public function options($data)
     {
         $this->options = collect($data);
 
