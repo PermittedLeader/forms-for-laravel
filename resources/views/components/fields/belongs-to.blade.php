@@ -1,16 +1,16 @@
 @if($method != "show")
     <x-forms::input.select label="{{ $fieldObject->getLabel() }}" name="{{ $fieldObject->key }}" required="{{ $fieldObject->required }}">
-        @foreach ($fieldObject->options as $option)
+        @foreach ($fieldObject->options as $optionKey => $option)
             <option 
-                value="{{ $option->{$fieldObject->keyAttribute} }}" 
+                value="{{ is_object($option) ? $option->{$fieldObject->keyAttribute} : $optionKey }}" 
                 @if($method == "edit")
                     @selected(
-                        old($fieldObject->key,$fieldObject->inputValue()) == $option->{$fieldObject->keyAttribute}
+                        old($fieldObject->key,$fieldObject->inputValue()) == (is_object($option) ? $option->{$fieldObject->keyAttribute} : $optionKey)
                     )
                 @endif
                 
                 >
-                {{ $option->{$fieldObject->displayAttribute} }}
+                {{ is_object($option) ? $option->{$fieldObject->displayAttribute} : $option  }}
             </option>
         @endforeach 
     </x-forms::input.select>
