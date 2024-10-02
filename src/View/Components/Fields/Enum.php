@@ -23,13 +23,17 @@ class Enum extends Field
             }
         });
         $this->formatInputDisplay(function ($value) {
-            return $value->value;
+            if (is_object($value) && class_implements($value, DisplayString::class)) {
+                return $value->value;
+            } else {
+                return '';
+            }
         });
     }
 
-    public function options(BackedEnum $data)
+    public function options(array $data)
     {
-        $this->options = $data::cases();
+        $this->options = $data;
 
         return $this;
     }
