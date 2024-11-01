@@ -3,10 +3,10 @@
     "description": "Forms for Laravel",
     "type": "project",
     "require": {
-        "livewire/livewire": "^3.0",
-        "laravel/framework": "^10.0",
+        "livewire/livewire": ">=3.0",
+        "laravel/framework": ">=10.0",
         "propaganistas/laravel-phone": "^5.1",
-        "permittedleader/tiffey": "^1.0",
+        "permittedleader/tiffey": ">=1.0",
         "asdh/laravel-flatpickr": "^2.2"
     },
     "repositories": {
