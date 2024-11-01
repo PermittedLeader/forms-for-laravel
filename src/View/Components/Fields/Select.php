@@ -21,14 +21,14 @@ class Select extends Field
             if (is_object($value)) {
                 return $value->{$this->displayAttribute};
             } else {
-                return '';
+                return $value;
             }
         });
         $this->formatInputDisplay(function ($value) {
             if (is_object($value)) {
                 return $value->{$this->keyAttribute};
             } else {
-                return '';
+                return $value;
             }
         });
     }
