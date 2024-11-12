@@ -28,6 +28,18 @@
 @push('styles')
 @once
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.css">
+<style>
+    @media (prefers-color-scheme: dark) {
+        .CodeMirror.cm-s-easymde.CodeMirror-wrap {
+            background: rgb(26,26,26);
+        }
+    }
+    @media (prefers-color-scheme: light) {
+        .CodeMirror.cm-s-easymde.CodeMirror-wrap {
+            background: #fff;
+        }
+    }
+</style>    
 @endonce
 @endpush
 @push('scripts')
@@ -49,6 +61,7 @@
     @error($name)
         <x-tiffey::input.hint class="text-warning-dark dark:text-warning-light">{{ $message }}</x-tiffey::input.hint>
     @enderror
+    
     <div 
         x-data="{ 
             value: $refs.editor.value, 
