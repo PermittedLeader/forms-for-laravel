@@ -32,7 +32,7 @@ abstract class Field extends Component
 
     public bool $required = false;
 
-    public $attributes = null;
+    public ComponentAttributeBag $attributes;
 
     /**
      * Form component
@@ -101,7 +101,7 @@ abstract class Field extends Component
      */
     public function renderForEditing()
     {
-        return view('forms::components.'.$this->component, ['fieldObject' => $this, 'method' => 'edit']);
+        return view('forms::components.'.$this->component, ['fieldObject' => $this, 'method' => 'edit', 'attributes'=>$this->attributes]);
     }
 
     /**
