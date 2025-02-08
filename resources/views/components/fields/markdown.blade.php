@@ -3,6 +3,7 @@
         label="{{ $fieldObject->getLabel() }}" 
         name="{{ $fieldObject->key }}" 
         required="{{ $fieldObject->required }}"
+        {{ $attributes }}
         >
         {{ old($fieldObject->key,$fieldObject->inputValue()) }}
     </x-forms::input.markdown>

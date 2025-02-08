@@ -3,8 +3,9 @@
 namespace Permittedleader\Forms\View\Components\Fields;
 
 use Closure;
-use Illuminate\Console\View\Components\Component;
 use Illuminate\Support\Str;
+use Illuminate\Console\View\Components\Component;
+use Illuminate\View\ComponentAttributeBag;
 
 abstract class Field extends Component
 {
@@ -31,6 +32,8 @@ abstract class Field extends Component
 
     public bool $required = false;
 
+    public $attributes = null;
+
     /**
      * Form component
      *
@@ -48,6 +51,8 @@ abstract class Field extends Component
         if ($value != '') {
             $this->value = $value;
         }
+
+        $this->attributes = new ComponentAttributeBag([]);
     }
 
     /**
@@ -174,6 +179,18 @@ abstract class Field extends Component
     {
         $this->required = $required;
 
+        return $this;
+    }
+
+    /**
+     * Create a component attribute bag for this field
+     *
+     * @param array $attributes
+     * @return self
+     */
+    public function customAttributes(array $attributes): self
+    {
+        $this->attributes = new ComponentAttributeBag($attributes);
         return $this;
     }
 }

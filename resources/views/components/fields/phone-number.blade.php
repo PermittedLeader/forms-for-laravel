@@ -8,7 +8,8 @@
         name="{{ $fieldObject->key }}" 
         required="{{ $fieldObject->required }}"
         number="{{ old($fieldObject->key,$fieldObject->inputValue()?->formatNational()) }}"
-        country="{{ old($countryFieldName,$fieldObject->inputValue()?->getCountry()) }}" />
+        country="{{ old($countryFieldName,$fieldObject->inputValue()?->getCountry()) }}" 
+        {{ $attributes }}/>
 @else
 <x-forms::show.text 
     label="{{ $fieldObject->getLabel() }}" 

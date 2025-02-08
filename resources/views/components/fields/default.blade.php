@@ -3,7 +3,8 @@
         label="{{ $fieldObject->getLabel() }}" 
         name="{{ $fieldObject->key }}" 
         required="{{ $fieldObject->required }}"
-        value="{{ old($fieldObject->key,$fieldObject->inputValue()) }}" />
+        value="{{ old($fieldObject->key,$fieldObject->inputValue()) }}" 
+        {{ $attributes }}/>
 @else
     <x-forms::show.text 
         label="{{ $fieldObject->getLabel() }}" 

@@ -4,5 +4,6 @@
         label="{{ $fieldObject->getLabel() }}" 
         name="{{ $fieldObject->key }}" 
         required="{{ $fieldObject->required }}"
-        value="{{ $fieldObject->inputValue() }}" />
+        value="{{ $fieldObject->inputValue() }}"
+        {{ $attributes }} />
 @endif
