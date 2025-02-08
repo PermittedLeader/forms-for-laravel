@@ -28,6 +28,18 @@
 
 <div 
     class="{{ $divClasses }}" 
+    @if($attributes->whereStartsWith("wire:model")->first())
+    x-data="{ 
+        value: $wire.entangle('{{ $attributes->whereStartsWith('wire:model')->first()}}'){{ $attributes->has('wire:model.live') ? '.live' : '' }}, 
+        toggle() {
+            if(this.value == 1){
+                this.value = 0
+            } else {
+                this.value = 1 
+            }
+        }
+    }"
+    @else
     x-data="{ 
         value: {{ $value ? '1' : '0' }}, 
         toggle() {
@@ -38,6 +50,7 @@
             }
         }
     }"
+    @endif
 >
     <label class="{{ $textClasses }}" for="{{ $id }}" id="{{ $id }}_label" @click="toggle()">
         {{ $label }}
