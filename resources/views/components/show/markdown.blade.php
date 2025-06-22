@@ -28,6 +28,6 @@
     
     <div {{ $attributes->merge(['class'=>$fieldClasses]) }}" id="{{ $id }}">
         <x-tiffey::input.hint>Formatted text:</x-tiffey::input.hint> 
-        {!! \Illuminate\Support\Str::markdown($value) !!} 
+        {!! \Illuminate\Support\Str::markdown($value,['html_input'=>'escape','allow_unsafe_links'=>false]) !!} 
     </div>
 </div>
