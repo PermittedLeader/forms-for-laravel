@@ -9,11 +9,11 @@
     <x-tiffey::card>
         <x-slot name="header">
             @if($method == "edit")
-                @lang('Edit') {{ $this->getLabel() }}
+                @lang('forms::forms.methods.edit') {{ $this->getLabel() }}
             @elseif($method == "create")
-                @lang('Create') {{ $this->getLabel() }}
+                @lang('forms::forms.methods.create') {{ $this->getLabel() }}
             @elseif($method == "show")
-                @lang('Show') {{ $this->getLabel() }}
+                @lang('forms::forms.methods.show') {{ $this->getLabel() }}
             @endif
         </x-slot>
         <x-forms::partials.errors />
