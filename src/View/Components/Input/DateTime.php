@@ -55,6 +55,9 @@ class DateTime extends Flatpickr
             $this->name = $name;
         }
 
+        $this->dateFormat = config('forms::forms.datetime_format.date','Y-m-d');
+        $this->timeFormat = config('forms::forms.datetime_format.time','H:i:s');
+
         if(!$id){
             $this->id= Str::snake(preg_replace('/[^A-Za-z0-9_]/',' ',$this->name));
         }
