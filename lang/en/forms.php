@@ -10,6 +10,14 @@ return [
     'errors' => [
         'has_errors'=>'You have errors in your form',
         'whoops'=>'Whoops! Something went wrong.'
+    ],
+    'methods'=>[
+        'edit'=>'Edit',
+        'create'=>'Create',
+        'show'=>'Show'
+    ],
+    'actions'=>[
+        'submit'=>'Submit',
+        'reset'=>'Reset'
     ]
-    
 ];

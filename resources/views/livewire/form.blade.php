@@ -40,8 +40,8 @@
                     {{ $action->render() }}
                 @endforeach
                 @if ($this->method != "show")
-                <x-tiffey::form-button type="reset">Reset</x-tiffey::form-button>
-                <x-tiffey::form-button type="submit" color="bg-brand-mid">Submit</x-tiffey::form-button>
+                <x-tiffey::form-button type="reset">{{ __('forms::forms.actions.reset') }}</x-tiffey::form-button>
+                <x-tiffey::form-button type="submit" color="bg-brand-mid">{{ __('forms::forms.actions.submit') }}</x-tiffey::form-button>
                 @endif
             </x-slot>
         @endif
