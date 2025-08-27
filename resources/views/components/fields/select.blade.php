@@ -1,6 +1,9 @@
 @if($method != "show")
     <x-forms::input.select label="{{ $fieldObject->getLabel() }}" name="{{ $fieldObject->key }}" required="{{ $fieldObject->required }}" {{ $attributes }}>
         @foreach ($fieldObject->options as $key => $option)
+            
+            <option hidden disabled selected value> -- {{__('forms::forms.select.default') }} -- </option>
+
             @if(is_object($option))
             <option 
                 value="{{ $option->{$fieldObject->keyAttribute} }}" 
