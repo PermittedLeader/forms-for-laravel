@@ -2,7 +2,7 @@
 
 return [
     'datetime_format' => [
-        'date'=>'d/m/Y',
-        'time'=>'H:i:s'
+        'date'=>'Y-m-d',
+        'time'=>'H:i:S'
     ]
 ];
