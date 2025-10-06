@@ -30,12 +30,16 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.css">
 <style>
     @media (prefers-color-scheme: dark) {
-        .CodeMirror.cm-s-easymde.CodeMirror-wrap {
+        .CodeMirror.cm-s-easymde {
             background: rgb(26,26,26);
+            color: #fff;
+        }
+        .EasyMDEContainer {
+            color: #fff;
         }
     }
     @media (prefers-color-scheme: light) {
-        .CodeMirror.cm-s-easymde.CodeMirror-wrap {
+        .CodeMirror.cm-s-easymde {
             background: #fff;
         }
     }
