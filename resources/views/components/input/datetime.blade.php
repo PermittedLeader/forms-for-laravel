@@ -17,7 +17,12 @@
         $fieldClasses .= " border-warning-mid";
     @endphp
 @enderror
-
+<style>
+    .flatpickr-wrapper {
+        position: relative;
+        display: inherit;
+    }
+</style>
 <div
     @if($attributes->whereStartsWith("wire:model")->first())
     x-data="{value: @entangle($attributes->whereStartsWith("wire:model")->first())}"

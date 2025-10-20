@@ -124,6 +124,7 @@ class DateTime extends Flatpickr
         $configArray['noCalendar'] = $this->noCalendar;
         $configArray['dateFormat'] = $this->dateFormat();
         $configArray['altFormat'] = $this->altFormat ?: $this->dateFormat();
+        $configArray['static'] = true;
         return $configArray;
     }
 
