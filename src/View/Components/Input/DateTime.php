@@ -47,6 +47,8 @@ class DateTime extends Flatpickr
         public bool $clearable = false,
         public bool $disableMobile = true,
         public bool $noCalendar = false,
+        public bool $enableSeconds = false;
+        public int $minuteIncrement = 1;
     )
     {
         if(!$name){
@@ -125,7 +127,8 @@ class DateTime extends Flatpickr
         $configArray['dateFormat'] = $this->dateFormat();
         $configArray['altFormat'] = $this->altFormat ?: $this->dateFormat();
         $configArray['static'] = true;
-        $configArray['minuteIncrement'] = 1;
+        $configArray['minuteIncrement'] = $this->minuteIncrement;
+        $configArray['enableSeconds'] = $this->enableSeconds;
         return $configArray;
     }
 
