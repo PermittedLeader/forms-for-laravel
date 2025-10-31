@@ -125,6 +125,7 @@ class DateTime extends Flatpickr
         $configArray['dateFormat'] = $this->dateFormat();
         $configArray['altFormat'] = $this->altFormat ?: $this->dateFormat();
         $configArray['static'] = true;
+        $configArray['minuteIncrement'] = 1;
         return $configArray;
     }
 
