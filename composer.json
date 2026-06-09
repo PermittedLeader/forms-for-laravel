@@ -13,6 +13,10 @@
         "tiffey": {
             "type": "vcs",
             "url": "https://github.com/PermittedLeader/tiffey.git"
+        },
+        "laravel-flatpickr": {
+            "type": "vcs",
+            "url": "https://github.com/PermittedLeader/laravel-flatpickr.git"
         }
     },
     "license": "GNU GPL v3",
