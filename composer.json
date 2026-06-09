@@ -7,7 +7,7 @@
         "laravel/framework": ">=10.0",
         "propaganistas/laravel-phone": ">=5.1",
         "permittedleader/tiffey": ">=1.0",
-        "permittedleader/laravel-flatpickr": "^2.3"
+        "permittedleader/laravel-flatpickr": ">=2.3"
     },
     "repositories": {
         "tiffey": {
