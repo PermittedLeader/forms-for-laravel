@@ -47,7 +47,7 @@ class DateTime extends Flatpickr
         public bool $clearable = false,
         public bool $disableMobile = true,
         public bool $noCalendar = false,
-        public bool $enableSeconds = false;
+        public bool $enableSeconds = false,
         public int $minuteIncrement = 1;
     )
     {
