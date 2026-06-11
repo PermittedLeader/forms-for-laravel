@@ -14,7 +14,7 @@ abstract class Field extends Component
 
     public $key;
 
-    protected $label = '';
+    public $label = '';
 
     public $value;
 
