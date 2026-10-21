@@ -2,151 +2,43 @@
 
 namespace Permittedleader\Forms\View\Components\Input;
 
-use Carbon\Carbon;
-use Illuminate\View\View;
-use Illuminate\Support\Str;
-use Asdh\LaravelFlatpickr\Components\Flatpickr;
+use Closure;
+use Illuminate\Contracts\View\View;
+use Illuminate\View\Component;
 
-class DateTime extends Flatpickr
+class DateTime extends Component
 {
-    public string $name;
-    public string $divClasses;
-    public string $fieldClasses;
-    public string $textClasses;
-
+    /**
+     * Create a new component instance.
+     */
     public function __construct(
         public string $label,
-        public string $type,
-        public bool $required = false,
         public ?string $hint = null,
-        public $error = false,
-        ?string $name = null,
-        ?string $inBlock = null,
-        public array $config = [],
-        public string|int|null $id = null,
-        public bool $showDate = true,
-        public bool $showTime = false,
-        public string $dateFormat = 'Y-m-d',
-        public string $timeFormat = 'H:i:S',
-        public ?string $altFormat = 'd/m/Y H:i:S',
-        public string|Carbon|null $minDate = null,
-        public string|Carbon|null $maxDate = null,
-        public string|null $minTime = null,
-        public string|null $maxTime = null,
-        public int $firstDayOfWeek = 0,
-        public array $disable = [],
-        public bool $disableWeekend = false,
-        public array $enable = [],
-        public bool $multiple = false,
-        public bool $range = false,
-        public ?int $visibleMonths = null,
-        public string|array|Carbon|null $value = null,
-        public bool $inline = false,
-        public bool $showWeekNumbers = false,
-        public bool $time24hr = true,
-        public bool $clearable = false,
-        public bool $disableMobile = true,
-        public bool $noCalendar = false,
-        public bool $enableSeconds = false,
-        public int $minuteIncrement = 1
+        public ?bool $required = false,
+        public ?bool $error = false,
+        public ?string $name = null,
+        public ?string $value = null,
+        public ?string $format = 'datetime',
     )
     {
-        if(!$name){
-            $this->name = Str::snake($label);
-        } else {
-            $this->name = $name;
-        }
-
-        $this->dateFormat = config('forms.datetime_format.date','Y-m-d');
-        $this->timeFormat = config('forms.datetime_format.time','H:i:s');
-
-        if(!$id){
-            $this->id= Str::snake(preg_replace('/[^A-Za-z0-9_]/',' ',$this->name));
-        }
-    
-        switch ($type) {
-            case 'date':
-                
-                break;
-    
-            case 'datetime':
-                $this->showTime = true;
-                $this->time24hr = true;
-                break;
-    
-            case 'time':
-                $this->showTime = true;
-                $this->time24hr = true;
-                break;
-        }
-
-        $this->divClasses = "flatpickr-container flex flex-col w-full h-full";
-        $this->textClasses = "text-black dark:text-white";
-        $this->fieldClasses = "flatpickr-input w-full my-1 px-2 py-1 border ".config('tiffey.border-color')." dark:bg-gray-900 dark:text-white rounded";
-
-        if($inBlock=="show"){
-            $this->textClasses .= " font-bold";
-        } elseif($inBlock){
-            $this->textClasses .= " sr-only";
-        } else {
-            $this->textClasses .= " font-bold text-lg";
-            $this->divClasses .= " mb-3 border-l-4 border-transparent";
-        }
-
-        parent::__construct(
-            $this->config,
-            $this->id,
-            $this->showTime,
-            $this->dateFormat,
-            $this->timeFormat,
-            $this->altFormat,
-            $this->minDate,
-            $this->maxDate,
-            $this->minTime,
-            $this->maxTime,
-            $this->firstDayOfWeek,
-            $this->disable,
-            $this->disableWeekend,
-            $this->enable,
-            $this->multiple,
-            $this->range,
-            $this->visibleMonths,
-            $this->value,
-            $this->inline,
-            $this->showWeekNumbers,
-            $this->time24hr,
-            $this->clearable,
-            $this->disableMobile,
-        );
     }
 
-    public function config(): array
-    {
-        $configArray = parent::config();
-        $configArray['noCalendar'] = $this->noCalendar;
-        $configArray['dateFormat'] = $this->dateFormat();
-        $configArray['altFormat'] = $this->altFormat ?: $this->dateFormat();
-        $configArray['static'] = true;
-        $configArray['minuteIncrement'] = $this->minuteIncrement;
-        $configArray['enableSeconds'] = $this->enableSeconds;
-        return $configArray;
-    }
-
-    private function dateFormat(): string
-    {
-        if($this->showTime && $this->showDate){
-            return "{$this->dateFormat} {$this->timeFormat}";
-        } elseif ($this->showTime && !$this->showDate){
-            return "{$this->timeFormat}";
-        } elseif (!$this->showTime && $this->showDate){
-            return "{$this->dateFormat}";
-        } else {
-            return "";
-        }
-    }
-
-    public function render(): View
+    /**
+     * Get the view / contents that represent the component.
+     */
+    public function render(): View|Closure|string
     {
         return view('forms::components.input.datetime');
+    }
+
+
+    public function hasDate (): bool
+    {
+        return str_contains($this->format, 'date');
+    }
+
+    public function hasTime (): bool
+    {
+        return str_contains($this->format, 'time');
     }
 }

@@ -1,70 +1,58 @@
-@push('styles')
-@once
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-@endonce
-@endpush
-
-@push('scripts')
-@once
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-@endonce
-@endpush
-
-@error($name)
-    @php
-        $divClasses .= " border-warning-mid pl-3";
-        $textClasses .= " text-warning-dark";
-        $fieldClasses .= " border-warning-mid";
-    @endphp
-@enderror
-<style>
-    .flatpickr-wrapper {
-        position: relative;
-        display: inherit;
-    }
-</style>
-<div
-    @if($attributes->whereStartsWith("wire:model")->first())
-    x-data="{value: @entangle($attributes->whereStartsWith("wire:model")->first())}"
-    @else
-    x-data="{value:'{{ $value }}'}"
-    @endif
-    x-init='
-        let picker = flatpickr($refs.picker, @json($config()))
-        picker.setDate(value)
-        $watch("value",()=>picker.setDate(value))'
-    class="{{ $divClasses }}"
+<div 
+    x-data="dateTimePicker({
+        hasDate: @js($hasDate()),
+        hasTime: @js($hasTime()),
+        hiddenInputRef: '{{ $name }}value'
+    })"
 >
-    <label class="{{ $textClasses }}" for="{{ $id }}">
-        {{ $label }}
-        
-        @if ($required)
-            <x-tiffey::input.required /> 
-        @endif
-    </label>
-    @if($hint)
-        <x-tiffey::input.hint>{{ $hint }}</x-tiffey::input.hint>
-    @endif
-    @error($name)
-        <x-tiffey::input.hint class="text-warning-dark dark:text-warning-light">{{ $message }}</x-tiffey::input.hint>
-    @enderror
-    <div wire:ignore class="w-full">
-        <input 
-        type="text" 
-        {{ $attributes->merge(['class'=>$fieldClasses]) }} 
-        name="{{ $name }}" 
-        id="{{ $id }}" 
-        @required($required)
-        x-ref="picker"
-        x-model="value"
-            />
-    
-        @if($clearable)
-            <a id="{{ $id }}-clearable" title="clear" class="flatpickr-clearable" data-clear>
-                {{ $clearer ?? $defaultClearer() }}
-            </a>
-        @endif
-    </div>
-    
-    
+    <div x-effect="initSync()"></div>
+
+
+    <x-forms::fieldset
+        label="{{ $label }}"
+        hint="{{ $hint }}"
+        required="{{ $required }}"
+        error="{{ $error }}"
+    >
+        <div class="flex flex-row gap-4">
+            @if ($hasDate())
+                <div>
+                    <flux:date-picker
+                        type="input"
+                        locale="en-GB"
+                        ::value="dateValue"
+                        x-on:change="onDateChange($event)"
+                    />
+                </div>
+            @endif
+
+            @if ($hasTime())
+                <div>
+                    <flux:time-picker
+                        type="input"
+                        time-format="24-hour"
+                        open-to="now"
+                        locale="en-GB"
+                        ::value="timeValue"
+                        x-on:change="onTimeChange($event)"
+                    />
+                </div>
+            @endif
+        </div>
+
+        <input
+            class="hidden"
+            x-ref="{{ $name }}value"
+            x-model.fill="value"
+            x-on:input="syncTextToPickers($event.target.value)"
+            name="{{ $name }}"
+            {{ $attributes->whereStartsWith(['wire:model', 'value']) }}
+            @unless ($attributes->has(['wire:model','value']))
+                value="{{ $value }}"
+            @else 
+            {{ $attributes->whereStartsWith(['wire:model', 'value']) }}
+            @endunless
+            
+        />
+    </x-forms::fieldset>
 </div>
