@@ -26,6 +26,8 @@ class BelongsToSelectComponent extends Component
 
     public bool $modalOpen = false;
 
+    public int|null $value = null;
+
     /**
      * Render this Action component for the table
      *
@@ -33,6 +35,16 @@ class BelongsToSelectComponent extends Component
      */
     public function render()
     {
+        if($this->value && !isset($this->selectedDisplay))
+        {
+            $model = new $this->model;
+            $selectedModel = $model->find($this->value);
+            if($selectedModel)
+            {
+                $this->selectedIds = [$selectedModel->{$selectedModel->getKeyName()}];
+                $this->selectedDisplay = [$selectedModel->{$this->fieldAttributes['displayAttribute'] ?? 'name'}];
+            }
+        }
         return view('forms::livewire.belongs-to-select-component');
     }
 
